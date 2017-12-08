@@ -78,7 +78,7 @@ function YouTubeVideoNav(){return{
     firstVideoLoaded:false,
     videoStartedAt:0,
     shuffle:false,
-    //TODO: data vars
+    //data vars
     embedLink:'https://www.youtube.com/embed/$videoId?rel=0&enablejsapi=1&origin=$origin',
     origin:'',
     newDays:28,
