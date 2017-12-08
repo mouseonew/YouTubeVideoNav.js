@@ -1,0 +1,262 @@
+<html>
+
+    <head>
+        <title>YouTubeVideoNav.js</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="YouTubeVideoNav.js"></script>
+        <link rel="stylesheet" type="text/css" href="YouTubeVideoNav.css">
+        <script src="PageZoom.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                $('body>.descMore>span').click(function(){
+                    $('body>.description').addClass('more');
+                    $(this).parent().remove();
+                });
+            });
+
+        </script>
+        <style>
+            body>h1{
+                margin-bottom: 0px;
+            }
+            body>a{
+                display:inline-block;
+                margin-bottom: 30px;
+                /*cursor:default;*/
+            }
+            html{
+                background-color: rgb(26, 47, 77);
+                background-attachment: fixed;
+            }
+            html.zoomed{
+                zoom:1.5;
+                -moz-transform: scale(1.5);
+            }
+            body{
+                box-shadow: white 0px 0px 16px;
+                margin:0 auto;
+                width:800px;
+                position:relative;
+                font-size:130%;
+                background-color: rgba(0,0,0,.6);
+                color: rgba(255,255,255,.9);
+                padding:20px;
+                border-left:1px solid white;
+                border-right:1px solid white;
+            }
+            .descMore{
+                text-align: right;
+                font-size: 110%;
+                margin-top:20px;
+            }
+            .descMore span{
+                font-weight: bold;
+                background-color: white;
+                color:black;
+                padding:10px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+            .description ul{
+                margin-bottom:0px;
+            }
+            .description p:last-child{
+                margin-bottom: 0px;
+            }
+            .description p:first-child{
+                margin-top: 0px;
+            }
+            .description{
+                height:110px;
+                overflow: hidden;
+                border-bottom: 1px dotted white;
+            }
+            .description.more{
+                height: auto;
+                border-bottom:none;
+            }
+            *:not(.YouTubeVideoNav) a{
+                text-decoration: none;
+                border-bottom: 1px solid rgba(255,255,255,.5);
+            }
+            a{
+                color:white;
+            }
+            a:hover{
+                color:rgba(255,255,255,.9);
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <h1>YouTubeVideoNav.js</h1>
+        <a href="https://github.com/0n3tw0">https://github.com/0n3tw0</a>
+
+        <div class="description">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis sed odio laoreet ornare. Ut semper ipsum est, vitae viverra leo consequat nec. Sed auctor lectus aliquam diam facilisis interdum. Curabitur lacinia nibh id tempus aliquet. Maecenas maximus, nibh quis mattis lobortis, erat tellus ornare ante, vitae commodo dolor lacus vel odio. Vestibulum dapibus magna non purus commodo vehicula. Nam maximus ipsum ac nibh eleifend, in volutpat magna tempor. Morbi quis malesuada libero. Integer finibus, risus ut sodales maximus, leo ex porta tortor, quis molestie est felis non turpis. Sed ornare aliquam lorem, nec tempor urna condimentum tempus. Suspendisse suscipit velit id eros mattis, vitae maximus nisi porttitor. Vestibulum et finibus mauris. Donec eu eros enim. Vivamus tempus faucibus felis, tempor ullamcorper lectus. Sed blandit eget lorem eget fermentum.
+            </p>
+            <p>
+                Suspendisse pretium mattis magna. Vestibulum arcu arcu, eleifend sit amet nisi eget, ullamcorper tincidunt tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Quisque luctus ac orci in sollicitudin. Donec lobortis pellentesque augue, vitae auctor justo efficitur nec. Donec tincidunt scelerisque velit, ac gravida magna egestas cursus. Donec eget magna magna. Curabitur blandit hendrerit mauris, non condimentum velit pellentesque faucibus. Nam vestibulum nisi non risus bibendum sollicitudin a feugiat ex. Ut sollicitudin sit amet enim eget bibendum. Phasellus nulla mauris, imperdiet at aliquet non, malesuada in urna. In venenatis ex at finibus tristique. Duis condimentum ornare tristique. Fusce in risus elementum nulla mattis viverra. Duis ac ligula a nisl lacinia ullamcorper eu auctor justo.
+            </p>
+            <p>
+                Donec interdum fermentum turpis, eu rutrum nunc euismod ac. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus convallis ipsum sed sodales eleifend. Phasellus tincidunt, tellus at venenatis cursus, mauris risus ullamcorper enim, dapibus vestibulum nibh ligula id ipsum. In aliquet vulputate purus a lobortis. Sed nibh nisl, pulvinar id tellus at, aliquet mattis sem. Praesent sodales auctor tincidunt.
+            </p>
+            <p>
+                Suspendisse ac mi vel leo blandit sodales. Cras placerat nec justo ullamcorper gravida. Proin luctus ullamcorper justo, quis finibus neque gravida in. Vivamus sit amet nulla nec mauris placerat vestibulum at posuere sapien. Integer metus est, tristique ut turpis eu, facilisis convallis lorem. Proin id hendrerit tellus. Nunc orci leo, consectetur vitae pharetra a, iaculis vel justo. Suspendisse rhoncus sapien et lectus consequat, non consequat mauris interdum. Duis fringilla ante risus, id fermentum urna faucibus in. Aliquam a neque semper, vehicula turpis eu, viverra arcu. Mauris hendrerit sit amet justo quis consectetur. Fusce auctor ante quis sem dignissim, vel rutrum mi pellentesque. Ut rhoncus condimentum arcu et placerat.
+            </p>
+            <p>
+                Cras molestie magna tellus, scelerisque lacinia lacus laoreet ut. Etiam in hendrerit ante. Fusce finibus neque eget metus varius, in vehicula lorem lobortis. Nam nec massa sed lorem luctus faucibus. Donec eget euismod elit, in congue nisl. Donec tempor, nisl vitae dignissim mattis, nulla dui aliquam metus, non pellentesque eros leo tincidunt elit. Pellentesque facilisis purus nec nisi cursus, ac porttitor nibh varius. Aliquam posuere, ex eget convallis aliquam, lacus urna scelerisque dui, eget placerat mi quam sit amet nibh. Pellentesque et eros in lectus ornare bibendum.
+            </p>
+        </div>
+
+        <div class="descMore"><span>More</span></div>
+
+
+        <h2>Mr. Bean</h2>
+
+        <div id="videoNav1" class="YouTubeVideoNav" data-shuffle="false" data-origin="http://realultimatetv.com" data-newdays="28" data-embedlink="https://www.youtube.com/embed/$videoId?rel=0&enablejsapi=1&origin=$origin" data-progresswidth="36">
+
+            <div class="videoContainer">
+                <div class="nav">
+                    <a title="Previous" class="prev" href="#" onclick="return false;">&nbsp;&lt;&nbsp;</a><span class="numbers"><a class="viewing">&nbsp;</a></span><a title="Next" class="next" href="#" onclick="return false;">&nbsp;&gt;&nbsp;</a><a class="shuffle" title="Shuffle"><img src="shuffle.png"/></a>
+                </div>
+                <div class="iframeContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mCXJ_OHKwD0?rel=0&enablejsapi=1&origin=http://cowardlyvigilantes.com" frameborder="0" allowfullscreen></iframe><div class="description"></div>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="https://youtu.be/x7zw49-dczY" target="_blank">Home with Bean | Funny Clips | Mr. Bean Official</a>
+                    <div>What would you do if Mr Bean stayed with you?</div>
+                    <div>Dec 6, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/0RnKU0o-tDg" target="_blank">Tee Off, Mr. Bean | Episode 12 | Mr. Bean Official</a>
+                    <div>*Remastered Version* After causing chaos in the town launderette, Bean tries his hand at Krazy Golf, but after being told he can only touch the ball with the club, Bean's poor aim leads him on an elaborate tour around town before returning to the course several hours later to score 3,427.</div>
+                    <div>Dec 3, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/5JPKE5ynCLY" target="_blank">Back to School Mr. Bean | Episode 11 | Mr. Bean Official</a>
+                    <div>*Remastered Version* Bean attends an open day at a school and unleashes his usual brand of chaos in the various classes he visits. Despite all his fun, Bean's day takes a somber turn when he discovers that his cherished Mini is not where he left it.</div>
+                    <div>Nov 26, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/ORMYFBsOvvA" target="_blank">Mind the Baby, Mr. Bean | episode 10 | Mr. Bean Official</a>
+                    <div>*Remastered Version* While visiting Southsea, Bean accidentally becomes lumbered with a baby, with no idea of how or where it came from. So he does the honourable thing of treating it to a day at the fun fair. Somehow the baby manages to survive Bean's unique style of mishaps before thankfully being reunited with its mother.</div>
+                    <div>Nov 19, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/RbikwV0HbZs" target="_blank">Mr. Bean in Room 426 | Episode 8 | Mr. Bean Official</a>
+                    <div>*Remastered Version* Bean treats himself to a weekend in a hotel and seeks competition with his hotel neighbour. After he eats some spoiled oysters, he is confined to a nightmare about them and his neighbour. With his stomach turning, he goes outside of his room to complain to the other neighbour (who is playing very loud music) but is locked out. All in all, all hell breaks loose, ending with a certain someone's bottom on show...</div>
+                    <div>Nov 12, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/TvQw9VVfZwk" target="_blank">Mr. Bean Rides Again | Episode 6 | Mr. Bean Official</a>
+                    <div>*Remastered Version* Bean tries to save a man suffering from a heart attack but when the ambulance arrives, Bean uses it to jump start his car, inadvertently disabling the ambulance. Later he tries to post a letter and ends up getting locked inside a post box. Bean then packs for a holiday, suffers a noisy laughing man (Stephen Frost) on a train journey and then has to find a way to entertain a sick boy on the plane.</div>
+                    <div>Nov 5, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/SgA85x-7TaY" target="_blank">The Trouble with Mr. Bean | Episode 5 | Mr. Bean Official</a>
+                    <div>*Remastered Version* Bean wakes up late and has to drive to his dental appointment on the other side of town, while dressing and brushing his teeth. His appointment progresses badly after he manages to anaesthetise the dentist (Richard Wilson). Later he tries to help a young boy with his remote control boat sending an electric wheelchair out of control. He then tries and fails to have a picnic without being pestered by wasps.</div>
+                    <div>Oct 29, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/blO0cW0Px5E" target="_blank">Funny Bean | Funny Compilation | Mr. Bean Official</a>
+                    <div>Mr. Bean tries changing his clothes whilst driving. Where is the bathroom? Bean can't find it so he tries to use one next door. Mr. Bean stops a baby pram from flying away.</div>
+                    <div>Oct 20, 2017</div>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <h2>Mr. Bean Cartoons</h2>
+
+        <div id="videoNav2" class="YouTubeVideoNav" data-shuffle="false" data-origin="http://realultimatetv.com" data-newdays="28" data-embedlink="https://www.youtube.com/embed/$videoId?rel=0&enablejsapi=1&origin=$origin" data-progresswidth="36">
+
+            <div class="videoContainer">
+                <div class="nav">
+                    <a title="Previous" class="prev" href="#" onclick="return false;">&nbsp;&lt;&nbsp;</a><span class="numbers"><a class="viewing">&nbsp;</a></span><a title="Next" class="next" href="#" onclick="return false;">&nbsp;&gt;&nbsp;</a><a class="shuffle" title="Shuffle"><img src="shuffle.png"/></a>
+                </div>
+                <div class="iframeContainer">
+                    <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe><div class="description"></div>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="https://youtu.be/oOfV8gQBKQs" target="_blank">Animated Adventures #21 | Full Episodes | Mr. Bean Official Cartoon</a>
+                    <div>More amazing full episodes of Mr. Bean the animated series.
+                        Viral Bean - Mr. Bean wants to read his book but he gets interrupted by too much noise.
+
+                        Super Spy - Fascinated by the super spy show, Mr. Bean decides to become a super spy himself.
+
+                        Scout Bean - When Irma's scout master is disabled, Mr. Bean becomes the substitute scout master to take care of Irma and her kid scouts.
+
+                        Back to School - When there's no milk for his tea and for teddy, Mr. Bean goes to buy milk. </div>
+                    <div>Dec 7, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/k--2GUm1sE4" target="_blank">Animated Adventures #20 | Full Episodes | Mr. Bean Official Cartoon</a>
+                    <div>Flat Pack - Mr. Bean's bookcase collapses, so he buys a new one in the hardware store.
+                        Holiday for Teddy - Mr. Bean decides to take Teddy on holiday to the seaside - but a spoiled little girl wants Teddy all to herself.
+                        The Newspaper - Every time Bean goes to collect the newspaper from the letterbox, it took away by someone.</div>
+                    <div>Dec 2, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/KtU0G2Or-58" target="_blank">Secret Bean and more Funnies | Clip Compilation | Mr. Bean Official Cartoon</a>
+                    <div>Mr. Bean want to be a spy just like James Bond, plus more funny Mr. Bean clips. </div>
+                    <div>Dec 1, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/ycoy7VTIxa0" target="_blank">Animated Adventures #19 | Full Episodes | Mr. Bean Official Cartoon</a>
+                    <div>Last day of November! Enjoy this full episode compilation of Mr. Bean.
+                        Rat Trap - Mr. Bean has to deal with an unwanted house guest but the stubborn rat refuses to leave.
+                        Valentine's Bean - Mr. Bean tries to be romantic but his idea of what that means is different to Irma's.
+                        All You Can Eat - Irma is coming for dinner, but Mr. Bean has forgotten about it and so doesn't have anything to cook. </div>
+                    <div>Nov 30, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/IAyX_Q01-6U" target="_blank">Library and more Funnies | Clip Compilation | Mr. Bean Official Cartoon</a>
+                    <div>Mr. Bean visits the library to try and read in peace but he discovers a computer, plus more funny Mr. Bean clips. </div>
+                    <div>Nov 29, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/AH7SsyWV0sQ" target="_blank">Animated Adventures #18 | Full Episodes | Mr. Bean Official Cartoon</a>
+                    <div>Mr. Bean's official animated adventures.
+                        Green Bean - Mr. Bean's electricity is cut off when Mrs. Wicket sees her electricity bill.
+                        Cash Machine - Mr. Bean wants to buy a cupcake, but his wallet is empty, so he has to visit a cash dispenser.
+                        Litterbugs - Mr. Bean is furious with the untidy state of the streets so he goes on a one-man mission to clean up the town.</div>
+                    <div>Nov 25, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/E3g5hMUqfDI" target="_blank">Newspaper and more Funnies | Clip Compilation | Mr. Bean Official Cartoon</a>
+                    <div>Mr. Bean seems to have some trouble picking up his morning paper. Plus more funny Mr. Bean clips.</div>
+                    <div>Nov 24, 2017</div>
+                </li>
+                <li>
+                    <a href="https://youtu.be/LvcIGiXjoTs" target="_blank">Animated Adventures #16 | Full Episodes | Mr. Bean Official Cartoon</a>
+                    <div>Welcome to new Mr. Bean's Animated Adventures.
+
+                        Home Movie - Mr. Bean attempts to make his own home movie - a horror thriller with Mrs. Wicket as the star!
+
+                        Fish Sitting - Mr. Bean has to look after Mrs. Wicket's goldfish, but Scrapper the cat is keen to help.
+
+                        The Cruise - Mr. Bean wins two tickets for an exotic cruise and takes Teddy along for the trip of a lifetime. While showing off to a new friend, Bean goes overboard and is stranded on a desert island.
+
+                        Coconut Shy - Mr. Bean has to buy a cup for Teddy, but he has no money. He goes to the funfair where he can win a free female teddy bear with a £10 note on it. </div>
+                    <div>Nov 23, 2017</div>
+                </li>
+
+            </ul>
+        </div>
+
+        <p>&nbsp;</p>
+
+    </body>
+</html>

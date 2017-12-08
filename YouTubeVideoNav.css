@@ -1,0 +1,127 @@
+.YouTubeVideoNav{
+    box-shadow: rgba(255,255,255,.5) 1px 1px 8px;
+}
+.YouTubeVideoNav li{
+    margin-bottom: 20px;
+}
+.YouTubeVideoNav li>*{
+    display:block;
+    margin-bottom: 10px;
+}
+.YouTubeVideoNav .videoContainer{
+    display:none;
+    text-align:center;
+    border:1px solid white;
+}
+.YouTubeVideoNav iframe{
+    display:inline-block;
+    background-color: black;
+}
+.YouTubeVideoNav .iframeContainer .description h3{
+    margin-top: 0px;
+}
+.YouTubeVideoNav .iframeContainer .description h3 span{
+    font-size: 80%;
+}
+.YouTubeVideoNav .iframeContainer .description{
+    display:inline-block;
+    width:217px;
+    height:295px;
+    vertical-align: top;
+    overflow-y:auto;
+    padding:10px;
+    font-size: 90%;
+    border-left:1px solid white;
+}
+.YouTubeVideoNav .iframeContainer{
+    height:315px;
+    text-align: left;
+}
+.YouTubeVideoNav .nav.disableButtons{
+    pointer-events:none;
+}
+.YouTubeVideoNav .nav.disableButtons>span span{
+    margin-top:-35px !important;
+    opacity:0;
+}
+.YouTubeVideoNav .nav.disableButtons a{
+    opacity: .5;
+}
+.YouTubeVideoNav .nav{
+    padding-top:6px;
+    padding-bottom:6px;
+    border-bottom:1px solid white;
+    background-color: rgba(0,0,0,.5);
+}
+.YouTubeVideoNav .nav .numbers{
+    display:inline-block;
+    width:640px;
+}
+.YouTubeVideoNav .nav a:hover{
+    background-color: rgba(255,255,255,.25);
+}
+.YouTubeVideoNav .nav .numbers .progress{
+    position:absolute;
+    width:0px;/* 36px max in code */
+    height:1px;
+    background-color: #adff2f;
+    margin-top:27px;
+    margin-left:-8px;
+}
+.YouTubeVideoNav .nav .numbers .progressBg{
+    position:absolute;
+    width:35px;/* 36px max in code */
+    height:1px;
+    background-color: rgba(255,255,255,.5);
+    margin-top:27px;
+    margin-left:-8px;
+}
+.YouTubeVideoNav .nav .shuffle.on{
+    background-color: rgba(255,255,255,.25);
+}
+.YouTubeVideoNav .nav .shuffle{
+    cursor:pointer;
+    display:inline-block;
+}
+.YouTubeVideoNav .nav .numbers .completed,
+.YouTubeVideoNav .nav .numbers .new{
+    transition: opacity .25s linear,margin-top .25s linear;
+    margin-left: -12px;
+    position: absolute;
+    color: #ff4500;
+    font-size: 80%;
+    font-family: Arial Black;
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    margin-top: -10px;
+    cursor: default;
+}
+.YouTubeVideoNav .nav .numbers .completed{
+    margin-top: -10px;
+    margin-left: -15px;
+    border:none;
+    background-color: transparent;
+    color:#adff2f;
+}
+.YouTubeVideoNav .nav>a{
+    width:auto !important;
+}
+.YouTubeVideoNav .nav a{
+    border:0px;
+    margin-left:1px;
+    margin-right:1px;
+    transition: background-color .25s linear,opacity .25s linear;
+    border-radius:8px;
+    padding: 10px;
+    width:20px;
+    display:inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0,0,0,.5);
+}
+.YouTubeVideoNav .nav .numbers a.viewing{
+    background-color: rgba(255,255,255,.25);
+    cursor:default;
+}
