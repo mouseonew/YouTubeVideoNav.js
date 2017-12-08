@@ -10,7 +10,7 @@ which you must change for your specific site, they are rather self explanatory. 
 unordered list "&lt;ul&gt;", which you can view below. New list items "&lt;li&gt;" can be added or removed as needed. 
 Once the data is set correctly the files in this package can be uploaded to your site and tested.
 
-<pre>
+```
 <div 
   id="videoNav1"
   class="YouTubeVideoNav"
@@ -38,4 +38,4 @@ Once the data is set correctly the files in this package can be uploaded to your
     
   </ul>
 </div>
-</pre>
+```
