@@ -9,7 +9,7 @@ In the index.html file notice the divs with "YouTubeVideoNav" as the class. Ther
 which you must change for your specific site, they are rather self explanatory. Make sure "data-origin" is 
 set correctly and if you have multiple video navigators on the same page that each id attribute is unique. 
 The data format is in the unordered list "&lt;ul&gt;", which you can view below. New list items "&lt;li&gt;" 
-can be added or removed as needed. The styling and layout can be modified with the CSS files. Once the data 
+can be added or removed as needed. The styling and layout can be modified with the CSS file. Once the data 
 is set correctly the files in this package can be uploaded to your site and tested.
 
 ```
