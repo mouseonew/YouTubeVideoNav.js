@@ -1,9 +1,9 @@
 # YouTubeVideoNav.js
 
 A YouTube UI that remembers positions and watched videos on site return and cycles through unwatched videos. 
-An example of this code in action can be [seen here](http://cowardlyvigilantes.com/).
+An example of this code in action can be [seen here](http://cowardlyvigilantes.com/YouTubeVideoNavjs/).
 
-[![cowardlyvigilantes.com](http://cowardlyvigilantes.com/sitescreenshot.jpg)](http://cowardlyvigilantes.com/)
+[![cowardlyvigilantes.com](http://cowardlyvigilantes.com/YouTubeVideoNavjs/sitescreenshot.jpg)](http://cowardlyvigilantes.com/YouTubeVideoNavjs/)
 
 ## Setup
 
@@ -19,7 +19,7 @@ is set correctly the files in this package can be uploaded to your site and test
   id="videoNav1"
   class="YouTubeVideoNav"
   data-shuffle="false"
-  data-origin="http://yoursitehere.com"
+  data-origin="http://cowardlyvigilantes.com"
   data-newdays="28"
   data-embedlink="https://www.youtube.com/embed/$videoId?rel=0&enablejsapi=1&origin=$origin"
   data-progresswidth="36">
@@ -29,15 +29,14 @@ is set correctly the files in this package can be uploaded to your site and test
     <ul>
     
       <li>
-        <a href="https://youtu.be/CGTJMYWCego" target="_blank">MC #54</a>
-        <div>Another day... Convoluted strategies, tiiiiiiiiiiiime limit, ctrl-z undo, anonymous speak freely, I don't wanna grow up capitalists, nonexistent mafia appeasement, LOTR brainstem fantasies, fear of speech, and slaying dragons.</div>
-        <div>Nov 27, 2017 4:58 PM</div>
+        <a href="https://youtu.be/x7zw49-dczY" target="_blank">Home with Bean | Funny Clips | Mr. Bean Official</a>
+        <div>What would you do if Mr Bean stayed with you?</div>
+        <div>Dec 6, 2017</div>
       </li>
-
       <li>
-        <a href="https://youtu.be/Lx9oyGfkJ1k" target="_blank">MC #51</a>
-        <div>Another day... One black Friday, kings chamber, work work work stressed out, future adolescents billion person earth battlefield simulation, shoulda coulda woulda, reverse peter principle, pet cone and latex, working hard, scenic lonely roads, twist finger tap knee and pinch ankle, I'm an elf now, and selective empathy.</div>
-        <div>Nov 24, 2017 2:17 PM</div>
+        <a href="https://youtu.be/0RnKU0o-tDg" target="_blank">Tee Off, Mr. Bean | Episode 12 | Mr. Bean Official</a>
+        <div>*Remastered Version* After causing chaos in the town launderette, Bean tries his hand at Krazy Golf, but after being told he can only touch the ball with the club, Bean's poor aim leads him on an elaborate tour around town before returning to the course several hours later to score 3,427.</div>
+        <div>Dec 3, 2017</div>
       </li>
     
     </ul>
