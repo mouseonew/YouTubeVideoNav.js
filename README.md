@@ -24,21 +24,21 @@ is set correctly the files in this package can be uploaded to your site and test
   data-embedlink="https://www.youtube.com/embed/$videoId?rel=0&enablejsapi=1&origin=$origin"
   data-progresswidth="36">
     
-    <div class="videoContainer">...</div>
+  <div class="videoContainer">...</div>
 
-    <ul>
-    
-      <li>
-        <a href="https://youtu.be/x7zw49-dczY" target="_blank">Home with Bean | Funny Clips | Mr. Bean Official</a>
-        <div>What would you do if Mr Bean stayed with you?</div>
-        <div>Dec 6, 2017</div>
-      </li>
-      <li>
-        <a href="https://youtu.be/0RnKU0o-tDg" target="_blank">Tee Off, Mr. Bean | Episode 12 | Mr. Bean Official</a>
-        <div>*Remastered Version* After causing chaos in the town launderette, Bean tries his hand at Krazy Golf, but after being told he can only touch the ball with the club, Bean's poor aim leads him on an elaborate tour around town before returning to the course several hours later to score 3,427.</div>
-        <div>Dec 3, 2017</div>
-      </li>
-    
-    </ul>
+  <ul>
+
+    <li>
+      <a href="https://youtu.be/x7zw49-dczY" target="_blank">Home with Bean | Funny Clips | Mr. Bean Official</a>
+      <div>What would you do if Mr Bean stayed with you?</div>
+      <div>Dec 6, 2017</div>
+    </li>
+    <li>
+      <a href="https://youtu.be/0RnKU0o-tDg" target="_blank">Tee Off, Mr. Bean | Episode 12 | Mr. Bean Official</a>
+      <div>*Remastered Version* After causing chaos in the town launderette, Bean tries his hand at Krazy Golf, but after being told he can only touch the ball with the club, Bean's poor aim leads him on an elaborate tour around town before returning to the course several hours later to score 3,427.</div>
+      <div>Dec 3, 2017</div>
+    </li>
+
+  </ul>
 </div>
 ```
