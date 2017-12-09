@@ -3,7 +3,7 @@
 A YouTube UI that remembers positions and watched videos on site return and cycles through unwatched videos. 
 An example of this code in action can be [seen here](http://cowardlyvigilantes.com/YouTubeVideoNavjs/).
 
-[ ![cowardlyvigilantes.com](http://cowardlyvigilantes.com/YouTubeVideoNavjs/sitescreenshot.jpg)](http://cowardlyvigilantes.com/YouTubeVideoNavjs/) 
+
 
 ## Setup
 
