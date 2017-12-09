@@ -98,7 +98,6 @@ function YouTubeVideoNav(){return{
 
     ytapiEventInterval:function(){
         if(this.ytapiPlayer&&this.ytapiPlayer.getVideoUrl&&this.ytapiPlayer.getVideoUrl().split('=').pop()==this.videos[this.currentVideo].videoId){
-            console.log(this.ytapiPlayer);
             var time=Math.floor(this.ytapiPlayer.getCurrentTime());
             var duration=Math.floor(this.ytapiPlayer.getDuration());
             if(time>0&&time!=this.videos[this.currentVideo].time){
@@ -107,7 +106,6 @@ function YouTubeVideoNav(){return{
                 if(isNaN(timePercent)){
                     timePercent=0;
                 }
-                console.log(timePercent);
                 if(timePercent>.98){
                     time=Math.floor(duration*.98);
                 }
@@ -136,7 +134,6 @@ function YouTubeVideoNav(){return{
 
     localStorageUpdate:function(){
         if (typeof(Storage)!=='undefined'){
-            console.log(JSON.stringify(this.localStorageData));
             localStorage.setItem('videosTime_'+this.jqr.attr('id'),JSON.stringify(this.localStorageData));
         }
     },
@@ -148,7 +145,6 @@ function YouTubeVideoNav(){return{
                 videosTime=JSON.parse(localStorage['videosTime_'+this.jqr.attr('id')]);
             }
             this.localStorageData=videosTime;
-            console.log(videosTime);
             var i,i2;
             var len=this.videos.length;
             for(i in videosTime){
@@ -243,7 +239,6 @@ function YouTubeVideoNav(){return{
             var date=this.videos[this.videos.length-1].date;
             this.videos[this.videos.length-1].dateStr=(date.getMonth()+1)+'/'+(date.getDate().toString().length==1?'0'+date.getDate():date.getDate())+'/'+date.getFullYear().toString().substr(2);
         }.bind(this));
-        console.log(this.videos);
         this.localStorageCombineVideoData();
     },
 
@@ -272,51 +267,41 @@ function YouTubeVideoNav(){return{
         this.jqr.find('.nav .next').unbind('click').click(function(){this.nextVideo(false);}.bind(this));
 
         var currentVideo=this.currentVideo;
-
         var nums=this.jqr.find('.nav .numbers');
-        //nums.fadeOut('fast',function(){
+        nums.html('');
 
-            //nums.fadeIn('fast');
-            nums.html('');
-
-            var total=15;//this.videos.length<15?this.videos.length:15;
-            var start=this.currentVideo-Math.floor(total/2);
-            var i;
-            var current;
-            var aJq;
-            var newCount=0;
-            var timePercent;
-            var allVideosWatched=this.areAllVideosCompleted();
-            for(i=0;i<total;i++){
-                current=start+i;
-                while(current<0){
-                    current=this.videos.length+current;
-                }
-                while(current>=this.videos.length){
-                    current=current-this.videos.length;
-                }
-                aJq=$('<a data-videoid="'+current+'" href="#" onclick="return false;"><div class="progressBg"></div><div class="progress" style="width:'+Math.round((this.videos[current].time/this.videos[current].duration)*this.progressWidth)+'px"></div>'+(current+1)+'</a>');
-                if(this.currentVideo==current){
-                    aJq.addClass('viewing');
-                }else{
-                    aJq.attr('title',this.formatTooltipText(this.videos[current].title+'\n - '+this.videos[current].dateStr+''+'\n\n'+this.videos[current].desc));
-                    aJq.click(function(event){this.showVideoById($(event.currentTarget).data('videoid'));}.bind(this));
-                }
-                nums.append(aJq);
-                if(!allVideosWatched&&newCount<3&&this.videos[current].date.getTime()>(new Date().getTime())-(this.newDays*24*60*60*1000)){
-                    timePercent=this.videos[current].time/this.videos[current].duration;
-                    if(isNaN(timePercent)){
-                        timePercent=0;
-                    }
-                    if(timePercent<.75){
-                        newCount++;
-                        nums.append('<span class="new" title="New">!</span>');
-                    }
-                }else if(allVideosWatched){
-                    nums.append('<span class="completed" title="Watched">&#10004;</span>');
-                }
+        var total=15;//odd number //TODO: total data
+        var start=this.currentVideo-Math.floor(total/2);
+        var i;
+        var current;
+        var aJq;
+        var timePercent;
+        for(i=0;i<total;i++){
+            current=start+i;
+            while(current<0){
+                current=this.videos.length+current;
             }
-        //}.bind(this));
+            while(current>=this.videos.length){
+                current=current-this.videos.length;
+            }
+            aJq=$('<a data-videoid="'+current+'" href="#" onclick="return false;"><div class="progressBg"></div><div class="progress" style="width:'+Math.round((this.videos[current].time/this.videos[current].duration)*this.progressWidth)+'px"></div>'+(current+1)+'</a>');
+            if(this.currentVideo==current){
+                aJq.addClass('viewing');
+            }else{
+                aJq.attr('title',this.formatTooltipText(this.videos[current].title+'\n - '+this.videos[current].dateStr+''+'\n\n'+this.videos[current].desc));
+                aJq.click(function(event){this.showVideoById($(event.currentTarget).data('videoid'));}.bind(this));
+            }
+            nums.append(aJq);
+            timePercent=this.videos[current].time/this.videos[current].duration;
+            if(isNaN(timePercent)){
+                timePercent=0;
+            }
+            if(timePercent<.75&&this.videos[current].date.getTime()>(new Date().getTime())-(this.newDays*24*60*60*1000)){
+                nums.append('<span class="new" title="New">!</span>');
+            }else if(timePercent>.75||this.videos[current].completed){
+                nums.append('<span class="completed" title="Watched">&#10004;</span>');
+            }
+        }
     },
 
     showVideoById:function(id){
