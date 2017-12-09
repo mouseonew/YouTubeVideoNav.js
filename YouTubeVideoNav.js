@@ -34,6 +34,7 @@ function onYouTubeIframeAPIReady() {
 };
 
 function YouTubeAPI(){return{
+    playersArr:[],
     players:{},
     readyCount:0,
     videoNavs:{},
@@ -60,9 +61,23 @@ function YouTubeAPI(){return{
     videoChanged:function(id){
         if(!this.players[id]){
             this.players[id]=new YT.Player(id,{events:{onError:function(){this.videoNavs[id].ytapiError();}.bind(this)}});
+            this.playersArr.push(id);
             this.videoNavs[id].ytapiSetPlayer(this.players[id]);
-
         }
+    },
+    getNextVideoNav:function(player){
+        var i;
+        var len=this.playersArr.length;
+        for(i=0;i<len;i++){
+            if(this.players[this.playersArr[i]]==player){
+                i++;
+                if(i==len){
+                    i=0;
+                }
+                break;
+            }
+        }
+        return this.videoNavs[this.playersArr[i]];
     }
 }}
 
@@ -78,11 +93,13 @@ function YouTubeVideoNav(){return{
     firstVideoLoaded:false,
     videoStartedAt:0,
     shuffle:false,
+    scrollIntoView:false,
     //data vars
     embedLink:'https://www.youtube.com/embed/$videoId?rel=0&enablejsapi=1&origin=$origin',
     origin:'',
     newDays:28,
     progressWidth:36,
+    //TODO: data-paginatortotal
 
     ytapiError:function(){
         this.firstVideoLoaded=true;
@@ -101,6 +118,16 @@ function YouTubeVideoNav(){return{
             var time=Math.floor(this.ytapiPlayer.getCurrentTime());
             var duration=Math.floor(this.ytapiPlayer.getDuration());
             if(time>0&&time!=this.videos[this.currentVideo].time){
+                if(this.scrollIntoView){
+                    var zoom=1;
+                    if($('html').hasClass('zoomed')){
+                        zoom=$('html').css('zoom');
+                        $('html').removeClass('zoomed');
+                        setTimeout(function(){$('html').addClass('zoomed');},1000);
+                    }
+                    $('html,body').animate({scrollTop:(this.jqr.offset().top*zoom)-(($(window).height()/2)/zoom)+((this.jqr.outerHeight()/2)*((zoom!=1?zoom:2)/2))},1000);
+                    this.scrollIntoView=false;
+                }
                 this.firstVideoLoaded=true;
                 var timePercent=time/duration;
                 if(isNaN(timePercent)){
@@ -186,7 +213,6 @@ function YouTubeVideoNav(){return{
     },
 
     init:function(jqr,ytapi){
-
         if(jqr.data('embedlink')){
             this.embedLink=jqr.data('embedlink');
         }
@@ -199,7 +225,6 @@ function YouTubeVideoNav(){return{
         if(jqr.data('progresswidth')){
             this.progressWidth=jqr.data('progresswidth');
         }
-
         this.ytapi=ytapi;
         this.jqr=jqr;
         jqr.find('ul').hide();
@@ -211,6 +236,7 @@ function YouTubeVideoNav(){return{
             this.toggleShuffle();
         }
         this.jqr.find('.shuffle').click(this.toggleShuffle.bind(this));
+        $(window).scroll(function(){this.scrollIntoView=false;}.bind(this));
     },
 
     toggleShuffle:function(){
@@ -296,7 +322,7 @@ function YouTubeVideoNav(){return{
             if(isNaN(timePercent)){
                 timePercent=0;
             }
-            if(timePercent<.75&&this.videos[current].date.getTime()>(new Date().getTime())-(this.newDays*24*60*60*1000)){
+            if(!this.videos[current].completed&&timePercent<.75&&this.videos[current].date.getTime()>(new Date().getTime())-(this.newDays*24*60*60*1000)){
                 nums.append('<span class="new" title="New">!</span>');
             }else if(timePercent>.75||this.videos[current].completed){
                 nums.append('<span class="completed" title="Watched">&#10004;</span>');
@@ -344,12 +370,24 @@ function YouTubeVideoNav(){return{
                 }else if(i==this.videos.length-2){
                     this.currentVideo=0;
                     this.localStorageWatchedAll();
+                    if(this.ytapi.getNextVideoNav(this.ytapiPlayer)!=this.ytapiPlayer){
+                        this.firstVideoLoaded=false;
+                        this.ytapi.getNextVideoNav(this.ytapiPlayer).startFromOtherPlayer();
+
+                    }
                     break;
                 }
             }
         }
         this.makeVideoAppear();
         this.rebuildNumberNav();
+    },
+
+    startFromOtherPlayer:function(){
+        this.scrollIntoView=true;
+        this.firstVideoLoaded=true;
+        this.currentVideo--;
+        this.nextVideo(false);
     },
 
     areAllVideosCompleted:function(){
@@ -387,6 +425,7 @@ function YouTubeVideoNav(){return{
         var autoplay='';
         if(this.firstVideoLoaded){
             autoplay='&autoplay=1';
+
         }
         this.jqr.find('.nav').addClass('disableButtons');
         setTimeout(function(){this.jqr.find('.nav').removeClass('disableButtons');}.bind(this),2000);
