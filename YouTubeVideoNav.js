@@ -118,6 +118,7 @@ function YouTubeVideoNav(){return{
             var time=Math.floor(this.ytapiPlayer.getCurrentTime());
             var duration=Math.floor(this.ytapiPlayer.getDuration());
             if(time>0&&time!=this.videos[this.currentVideo].time){
+                console.log(this.ytapiPlayer);
                 if(this.scrollIntoView){
                     var zoom=1;
                     if($('html').hasClass('zoomed')&&$('html').css('zoom')){
@@ -423,18 +424,24 @@ function YouTubeVideoNav(){return{
         this.jqr.find('.videoContainer .description').fadeOut('fast');
         this.videoStartedAt=new Date().getTime();
         var autoplay='';
+        document.webkitExitFullscreen?document.webkitExitFullscreen():false;
+        document.mozCancelFullscreen?document.mozCancelFullscreen():false;
+        document.exitFullscreen?document.exitFullscreen():false;
         if(this.firstVideoLoaded){
             autoplay='&autoplay=1';
 
         }
         this.jqr.find('.nav').addClass('disableButtons');
-        setTimeout(function(){this.jqr.find('.nav').removeClass('disableButtons');}.bind(this),2000);
-        this.jqr.find('.videoContainer iframe').attr('src',this.videos[this.currentVideo].embed+'&start='+Math.round(this.videos[this.currentVideo].time)+autoplay).slideUp('fast',function(){
-            this.ytapi.videoChanged(this.jqr.find('iframe').attr('id'));
-            this.jqr.find('.videoContainer .description').fadeIn('fast');
-            this.jqr.find('.videoContainer iframe').slideDown('fast');
-            this.jqr.find('.videoContainer .description').html('<h3>'+this.videos[this.currentVideo].title+' <span>('+this.videos[this.currentVideo].dateStr+')</span></h3>'+this.videos[this.currentVideo].desc);
+        setTimeout(function(){
+            setTimeout(function(){this.jqr.find('.nav').removeClass('disableButtons');}.bind(this),2000);
+            this.jqr.find('.videoContainer iframe').attr('src',this.videos[this.currentVideo].embed+'&start='+Math.round(this.videos[this.currentVideo].time)+autoplay).slideUp('fast',function(){
+                this.ytapi.videoChanged(this.jqr.find('iframe').attr('id'));
+                this.jqr.find('.videoContainer .description').fadeIn('fast');
+                this.jqr.find('.videoContainer iframe').slideDown('fast');
+                this.jqr.find('.videoContainer .description').html('<h3>'+this.videos[this.currentVideo].title+' <span>('+this.videos[this.currentVideo].dateStr+')</span></h3>'+this.videos[this.currentVideo].desc);
 
-        }.bind(this));
+            }.bind(this));
+        }.bind(this),100);
+
     }
 }}
