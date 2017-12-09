@@ -120,7 +120,7 @@ function YouTubeVideoNav(){return{
             if(time>0&&time!=this.videos[this.currentVideo].time){
                 if(this.scrollIntoView){
                     var zoom=1;
-                    if($('html').hasClass('zoomed')){
+                    if($('html').hasClass('zoomed')&&$('html').css('zoom')){
                         zoom=$('html').css('zoom');
                         $('html').removeClass('zoomed');
                         setTimeout(function(){$('html').addClass('zoomed');},1000);
