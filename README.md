@@ -1,9 +1,9 @@
 # YouTubeVideoNav.js
 
 A YouTube UI that remembers positions and watched videos on site return and cycles through unwatched videos. 
-An example of this code in action can be [seen here](http://cowardlyvigilantes.com/YouTubeVideoNavjs/).
+An example of this code in action can be [seen here](http://realultimatetv.com/YouTubeVideoNavjs/).
 
-[![cowardlyvigilantes.com](http://cowardlyvigilantes.com/YouTubeVideoNavjs/sitescreenshot.jpg?)](http://cowardlyvigilantes.com/YouTubeVideoNavjs/) 
+[![realultimatetv.com](http://realultimatetv.com/YouTubeVideoNavjs/sitescreenshot.jpg?)](http://realultimatetv.com/YouTubeVideoNavjs/) 
 
 ## Setup
 
@@ -19,7 +19,7 @@ is set correctly the files in this package can be uploaded to your site and test
   id="videoNav1"
   class="YouTubeVideoNav"
   data-shuffle="false"
-  data-origin="http://cowardlyvigilantes.com"
+  data-origin="http://realultimatetv.com"
   data-newdays="28"
   data-embedlink="https://www.youtube.com/embed/$videoId?rel=0&enablejsapi=1&origin=$origin"
   data-progresswidth="36">
