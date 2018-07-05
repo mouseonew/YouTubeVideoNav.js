@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2017 0n3tw0 https://github.com/mouseonew
+Copyright (c) 2017 mouseonew http://mouseonew.com https://github.com/mouseonew
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
