@@ -1,6 +1,7 @@
 # YouTubeVideoNav.js
 
-A YouTube UI that remembers positions and watched videos on site return and cycles through unwatched videos. 
+A YouTube UI that remembers positions and watched videos on site return and cycles through unwatched videos. Once you click play it keeps playing. The idea is to have a TV like station on a website that will show the new videos whenever someone visits, it uses localstorage to save the data.
+
 An example of this code in action can be [seen here](http://realultimatetv.com/YouTubeVideoNavjs/).
 
 [![realultimatetv.com](http://realultimatetv.com/YouTubeVideoNavjs/sitescreenshot.jpg?)](http://realultimatetv.com/YouTubeVideoNavjs/) 
