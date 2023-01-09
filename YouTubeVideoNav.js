@@ -135,8 +135,8 @@ function YouTubeVideoNav(){return{
                     timePercent=0;
                 }
                 if(time>=duration-1){
-					timePercent=1;
-				}
+                    timePercent=1;
+                }
                 if(timePercent>.98){
                     time=Math.floor(duration*.98);
                 }
