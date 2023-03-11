@@ -134,7 +134,7 @@ function YouTubeVideoNav(){return{
                 if(isNaN(timePercent)){
                     timePercent=0;
                 }
-                if(time>=duration-2){
+                if(time>=duration-5){
                     timePercent=1;
                 }
                 if(timePercent>.98){
